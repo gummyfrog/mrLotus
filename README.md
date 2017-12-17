@@ -64,3 +64,14 @@ You can also look forward to reporting any bugs you find, which there are hopefu
 
 #### stats _arg_
 #### active
+
+
+## Libraries that Mr. Lotus uses
+
+The developers of these libraries have my infinite gratitude. Without these, Mr. Lotus wouldn't be possible.
+
+[discord.js](https://github.com/hydrabolt/discord.js)
+[scrape-it](https://github.com/IonicaBizau/scrape-it)
+[latest-tweets](https://github.com/noffle/latest-tweets)
+
+<3
