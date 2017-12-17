@@ -1,4 +1,7 @@
 # Mr. Lotus
+[![Discord Bots](https://discordbots.org/api/widget/status/353333480979169283.svg?noavatar=true)](https://discordbots.org/bot/353333480979169283)
+[![Discord Bots](https://discordbots.org/api/widget/servers/353333480979169283.svg?noavatar=true)](https://discordbots.org/bot/353333480979169283)
+
 A Warframe bot for the modern age.
 
 
