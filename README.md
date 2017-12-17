@@ -72,9 +72,7 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 
 [discord.js](https://github.com/hydrabolt/discord.js)
 
-
 [scrape-it](https://github.com/IonicaBizau/scrape-it)
-
 
 [latest-tweets](https://github.com/noffle/latest-tweets)
 
