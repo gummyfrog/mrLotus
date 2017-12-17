@@ -4,6 +4,7 @@ A Warframe bot for the modern age.
 
 ## What is Mr. Lotus?
 Mr. Lotus is a Warframe bot that lets you get in-game information straight from Discord.
+
 Mr. Lotus can notify you and your server's channels about specific alerts, and get info from the Wiki.
 
 ### Alert Management: 
@@ -75,6 +76,3 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 [scrape-it](https://github.com/IonicaBizau/scrape-it)
 
 [latest-tweets](https://github.com/noffle/latest-tweets)
-
-
-<3
