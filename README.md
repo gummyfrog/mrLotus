@@ -76,3 +76,11 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 [scrape-it](https://github.com/IonicaBizau/scrape-it)
 
 [latest-tweets](https://github.com/noffle/latest-tweets)
+
+## To-Do
+
+[ ] Handle Invasions
+[ ] Clean Webscraping
+[ ] Don't block threads
+[ ] Push this
+[ ] Success
