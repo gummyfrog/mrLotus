@@ -1,8 +1,8 @@
-# Mr. Lotus
+![Lotus](https://i.imgur.com/WagTow6.png)
+
 [![Discord Bots](https://discordbots.org/api/widget/status/353333480979169283.svg?noavatar=true)](https://discordbots.org/bot/353333480979169283)
 [![Discord Bots](https://discordbots.org/api/widget/servers/353333480979169283.svg?noavatar=true)](https://discordbots.org/bot/353333480979169283)
-
-A Warframe bot for the modern age.
+[![Libary](https://img.shields.io/badge/library-discord.js-blue.svg)](https://discord.js.org/)
 
 
 ## What is Mr. Lotus?
@@ -13,23 +13,27 @@ Mr. Lotus can notify you and your server's channels about specific alerts, and g
 ### Alert Management: 
 
 active
-###### Returns all active alerts, and how much time is left before they end.
+
+&nbsp;&nbsp;Returns all active alerts, and how much time is left before they end.
   
   
 alertme _arg_
-###### Mr. Lotus will notify you about alerts for _arg_
+
+&nbsp;&nbsp;&nbsp;Mr. Lotus will notify you about alerts for _arg_
   
   
 alertchannel _arg_
-###### Mr. Lotus will notify this channel about alerts for _arg_
+
+&nbsp;&nbsp;&nbsp;Mr. Lotus will notify this channel about alerts for _arg_
   
 ### Wiki Scraping Commands:
 This feature is still in beta.
 
 stats _arg_
-###### Returns info about _arg_ from the Wiki.
 
----
+&nbsp;&nbsp;&nbsp;Returns info about _arg_ from the Wiki.
+
+![Info](https://i.imgur.com/8W9H6hh.png)
   
 ## What happened to the old Mr. Lotus?
 
@@ -70,9 +74,9 @@ You can also look forward to reporting any bugs you find, which there are hopefu
 #### active
 
 
-## Libraries that Mr. Lotus uses
+## Libraries
 
-The developers of these libraries have my infinite gratitude. Without these, Mr. Lotus wouldn't be possible.
+The developers of these libraries have my infinite gratitude. Without these, Mr. Lotus wouldn't work.
 
 [discord.js](https://github.com/hydrabolt/discord.js)
 
@@ -85,5 +89,7 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 - [ ] Handle Invasions
 - [ ] Clean Webscraping
 - [ ] Don't block threads
+- [ ] Help Command
 - [ ] Push this
 - [ ] Success
+
