@@ -47,11 +47,16 @@ stats _arg_
   
 ## What happened to the old Mr. Lotus?
 
-When I made Mr. Lotus, I had intended for him to stay on a small number of servers. Now that a bunch of you are using him, I think you guys deserve an actual functioning bot. I've completely rewritten Mr. Lotus from scratch. 
-Most of the improvements are with how Mr. Lotus handles alerts, but you won't notice those if you haven't seen old Lotus. 
-Now, I'm confident enough to make Mr. Lotus open source, and hopefully have talented members of the Warframe community help make Mr. Lotus even better. Please don't publicly execute me for my thread blocking.
+When I made Mr. Lotus, I had intended for him to stay on a small number of servers. Now that a bunch of you are using him, I think you guys deserve an actual functioning bot. 
+
+Most of the improvements are with how Mr. Lotus handles alerts, but you won't notice these unless you've used the old Lotus. The changes users will be noticing immediately are the fancy new messages and new commands.
+
+
+I'm confident enough to make Mr. Lotus open source, and hopefully have talented members of the Warframe community help make Mr. Lotus even better. Please don't publicly execute me for my thread blocking.
+
 
 Lots of love,
+
 -gummyfrog
 
 ## How should I prepare for the update?
@@ -67,21 +72,22 @@ You can also look forward to reporting any bugs you find, which there are hopefu
 
 ## All Commands
 
-> All of these are prefixed with .lotus 
 
-> .lotus alertme ferrite
+.lotus alertme _arg_
 
-#### alertme _arg_
-#### alertchannel _arg_
+.lotus alertchannel _arg_
 
-#### stopalertme _arg_
-#### stopalertchannel _arg_
+.lotus stopalertme _arg_
 
-#### alertingme
-#### alertingchannel
+.lotus stopalertchannel _arg_
 
-#### stats _arg_
-#### active
+.lotus alertingme
+
+.lotus alertingchannel
+
+.lotus stats _arg_
+
+.lotus active
 
 
 ## Libraries
@@ -96,10 +102,10 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 
 ## To-Do
 
-- [ ] Handle Invasions
-- [ ] Clean Webscraping
-- [ ] Don't block threads
-- [ ] Help Command
-- [ ] Push this
-- [ ] Success
 
+- [ ] Help Command
+- [ ] Push this update
+- [ ] Clean Webscraping
+- [ ] Handle Invasions
+
+## <3
