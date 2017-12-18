@@ -12,26 +12,36 @@ Mr. Lotus can notify you and your server's channels about specific alerts, and g
 
 ### Alert Management: 
 
-active
+.lotus active
 
-&nbsp;&nbsp;Returns all active alerts, and how much time is left before they end.
+&nbsp;&nbsp;-Returns all active alerts, and how much time is left before they end.
   
   
-alertme _arg_
+  
+.lotus alertme _arg_
 
-&nbsp;&nbsp;&nbsp;Mr. Lotus will notify you about alerts for _arg_
+&nbsp;&nbsp;&nbsp;-Mr. Lotus will notify you about alerts for _arg_
   
   
-alertchannel _arg_
+  
+.lotus alertchannel _arg_
 
-&nbsp;&nbsp;&nbsp;Mr. Lotus will notify this channel about alerts for _arg_
+&nbsp;&nbsp;&nbsp;-Mr. Lotus will notify this channel about alerts for _arg_
+  
+  
+  
   
 ### Wiki Scraping Commands:
 This feature is still in beta.
 
+
 stats _arg_
 
-&nbsp;&nbsp;&nbsp;Returns info about _arg_ from the Wiki.
+
+&nbsp;&nbsp;&nbsp;-Returns info about _arg_ from the Wiki.
+
+
+
 
 ![Info](https://i.imgur.com/8W9H6hh.png)
   
