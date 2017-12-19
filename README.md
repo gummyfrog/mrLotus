@@ -104,7 +104,7 @@ The developers of these libraries have my infinite gratitude. Without these, Mr.
 
 
 - [ ] Help Command
-- [ ] Push this update
+- [X] Push this update
 - [ ] Clean Webscraping
 - [ ] Handle Invasions
 
