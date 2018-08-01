@@ -51,12 +51,17 @@ function richAlert(alert, file) {
 // loop function
 exports.checkForAlerts = function(client) {
 
+  // may change this whole structure
+  // alert objects, typage
+  // sorties, invasion, alert
+
+
   latestTweets('warframeAlerts', function (err, tweets) {
     var alert = alertFormat(tweets[0].content);
     var oldAlert = fs.readFileSync('./lastAlert.txt', 'utf8');
     removeAlerts();
 
-    if(alert != oldAlert && !alert.includes('Invasion') ) {
+    if(alert != oldAlert && !alert.includes('Invasion') && !alert.includes('Sortie') ) {
       // new alert
       fs.writeFileSync('./lastAlert.txt', alertFormat(tweets[0].content) );
 
