@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-var configRaw = fs.readFileSync("./config/codes.json");
+var configRaw = fs.readFileSync("../codes/lotus/code.json");
 const config = JSON.parse(configRaw);
 
 const userManager = require('./notifierDelegate.js');
