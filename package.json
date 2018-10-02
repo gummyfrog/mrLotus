@@ -4,7 +4,8 @@
   "description": "Warframe Info bot.",
   "main": "lotus.js",
   "scripts": {
-    "start": "node lotus.js"
+    "start": "node lotus.js",
+    "frog": "node lotus.js"
   },
   "repository": {
     "type": "git",
