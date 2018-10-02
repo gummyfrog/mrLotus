@@ -175,6 +175,6 @@ client.on('message', message => {
 
 
 
-client.login(config.login);
+client.login(config.token);
 
 setInterval(function() { alertsDelegate.checkForAlerts(client) }, 1000 * 15 );
