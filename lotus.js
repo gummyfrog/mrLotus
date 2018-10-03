@@ -107,5 +107,6 @@ client.on('message', message => {
 
 });
 
+setInterval(alerts.watchAlerts(client), 12 * 1000);
 
 client.login(config.token);
