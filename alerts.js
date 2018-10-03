@@ -294,8 +294,8 @@ function richInvoices(invoices) {
 
 function update() {
 	console.log('Updating')
-	// console.log(dat);
-	// json.writeFileSync(datPath, dat);
+	console.log(dat);
+	json.writeFileSync(datPath, dat);
 }
 
 function updateAlerts() {
