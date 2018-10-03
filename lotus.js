@@ -1,180 +1,111 @@
 const Discord = require('discord.js');
-const fs = require('fs');
-var configRaw = fs.readFileSync("../codes/lotus/code.json");
-const config = JSON.parse(configRaw);
-
-const userManager = require('./notifierDelegate.js');
-// notifier manages all of the users that need to be notified.
-// userbase manager
-
-
-
-const alertsDelegate = require('./alertsDelegate.js');
-// checks for alerts and alerts users
-
-
-const scrapeManager = require('./scrapeManager.js');
-// scrapes
-
-
+const json = require('jsonfile');
 const client = new Discord.Client();
+const prefix = "!"
 
-const prefix = ".lotus ";
+const config = json.readFileSync('../codes/lotus/code.json');
+const alerts = require('./alerts.js');
+
+const help = {
+  "embed": {
+  	"color": 3179153,
+    "description": `Thank you for using Mr. Lotus. The prefix is ${prefix}.`,
+    "fields": [
+      {
+        "name": "help",
+        "value": "Sends you this message."
+      },
+      {
+        "name": "alert [ me, channel ] { args }",
+        "value": "Tells Lotus to forward alerts containing at least one { args } to you or a channel."
+      },
+      {
+        "name": "stopalert [ me, channel] { args }",
+        "value": "Tells Lotus to stop forwarding alerts."
+      },
+      {
+        "name": "alerts [ me, channel ]",
+        "value": "Tells you what alerts Lotus is forwarding to you or a channel."
+      },
+      {
+        "name": "active",
+        "value": "Shows the active alerts."
+      }
+    ]
+  }
+}
 
 
+var lastCommandChannel;
 
-
+exports.send = function(what) {
+	lastCommandChannel.send(what);
+}
 
 client.on('ready', () => {
-  console.log('I am ready!');
+	console.log('I am ready!');
 });
 
 client.on('guildDelete', (leavingGuild) => {
-  console.log("I'm leaving the guild " + leavingGuild.name + '!');
-  userManager.deleteLeavingChannels(leavingGuild.id);
+	console.log("I'm leaving the guild " + leavingGuild.name + '!');
 });
+
 
 client.on('message', message => {
+	if(message.channel.type == "dm" || message.author.bot || message.content.substr(0, prefix.length) != prefix) {
+		return;
+	}
 
-  if(message.content.substring(0, prefix.length) != prefix) {
-    return;
-  }
+	var args = message.content.substr(prefix.length).toLowerCase().split(' ');
+	var command = args[0];
 
-  var command = message.content.split(" ")[1];
-  var properArgs = message.content.substring(prefix.length + command.length + 1);
-  var args = message.content.substring(prefix.length + command.length + 1).toLowerCase();
-  console.log(command);
-  console.log(args);
+	args.splice(0, 1);
+	var altArgs = args.slice(1);
 
+	lastCommandChannel = message.channel;
 
-
-  if(command === 'alertme') {
-
-      if(!userManager.alreadyNotifyingUser(args, message.author.id) ) {
-
-        // user is not being notified already
-        if (args == 'all') {
-          // notify user about all alerts
-          message.channel.send("I'll notify you about every alert, Tenno.");
-        } else {
-          // notify user about specific alertsDelegate
-          message.channel.send("I'll notify you about alerts for <" + args.toUpperCase() + ">.");
-        }
-
-        userManager.newNotify(args, message.author.id)
-
-      } else {
-        // user is being notified already
-        message.channel.send("You're already being notified about <" + args.toUpperCase() + ">, Tenno.");
-      }
-
-  };
-
-  if(command === 'stopalertme') {
-
-    if(userManager.alreadyNotifyingUser(args, message.author.id) ) {
-      // user is being notified already
-
-      if (args == 'all') {
-        message.channel.send("I'll stop notifying you about every alert.");
-      } else {
-        message.channel.send("I'll stop notifying you about alerts for <" + args.toUpperCase() + ">.");
-      }
-
-      userManager.stopNotifyingUser(args, message.author.id);
-
-    } else {
-      // user is already not being notified
-      message.channel.send("You're not being notified about <" + args.toUpperCase() + ">.");
-    }
-
-  }
+	if(command == 'help') {
+		message.author.send(help);
+	}
 
 
-  if(command === 'alertchannel') {
+	if(command == 'alert') {
+		if(args[0] == 'me') {
+			alerts.newSite('user', message, altArgs);
+		} else if (args[0] == 'channel') {
+			alerts.newSite('channel', message, altArgs);
+		}
+	}
 
-    if(message.guild == null) {
-      message.channel.send('Sorry, you need to use this command in a server!');
-      return;
-    }
+	if(command == 'stopalert') {
+		if(args[0] == 'me') {
+			alerts.removeSite('user', message, altArgs);
+		} else if (args[0] == 'channel') {
+			alerts.removeSite('channel', message, altArgs);
+		}
+	}
 
-    if(!userManager.alreadyNotifyingChannel(args, message.channel.id) ) {
-
-      // user is not being notified already
-      if (args == 'all') {
-        // notify user about all alerts
-        message.channel.send("I'll notify this channel about every alert.");
-      } else {
-        // notify user about specific alertsDelegate
-        message.channel.send("I'll notify this channel about alerts for <" + args.toUpperCase() + ">.");
-      }
-
-      userManager.newNotifyChannel(args, message.channel.id, message.guild.id);
-
-    } else {
-      // user is being notified already
-      message.channel.send("This channel will is already being notified about <" + args.toUpperCase() + ">.");
-    }
-
-  };
-
-  if(command === 'stopalertchannel') {
-
-    if(message.guild == null) {
-      message.channel.send('Sorry, you need to use this command in a server!');
-      return;
-    }
-
-    if(userManager.alreadyNotifyingChannel(args, message.channel.id) ) {
-
-      // user is being notified already
-      if (args == 'all') {
-        // stop notify user about all alerts
-        message.channel.send("I'll stop notifying this channel about every alert.");
-      } else {
-        // notify user about specific alertsDelegate
-        message.channel.send("I'll stop notifying this channel about alerts for <" + args.toUpperCase() + ">");
-      }
-
-      userManager.stopNotifyingChannel(args, message.channel.id, message.guild.id);
-
-    } else {
-      // user is being notified already
-      message.channel.send("This channel isn't being notified about <" + args.toUpperCase() + ">.");
-    }
-
-  }
-
-  if(command === 'active') {
-    message.channel.send(alertsDelegate.returnActiveAlerts());
-  }
+	if(command == 'alerts') {
+		if(args[0] == 'me') {
+			alerts.sites('user', message);
+		} else if (args[0] == 'channel') {
+			alerts.sites('channel', message);
+		}
+	}
 
 
-  if(command === 'stats') {
-    scrapeManager.returnScrape(properArgs, message)
-  }
+	// break
 
+	if(command == 'ship') {
+		alerts.watchAlerts(client);
+	}
 
-  if(command == 'alertingme') {
-    userManager.notifyingUserAbout(message.author.id, message);
-  }
-
-  if(command == 'alertingchannel') {
-    if(message.guild == null) {
-      message.channel.send('Sorry, you need to use this command in a server!');
-      return;
-    }
-
-    userManager.notifyingChannelAbout(message.channel.id, message.guild.id, message);
-  }
-
-
+	if(command == 'active') {
+		alerts.activeAlerts();
+	}
 
 
 });
-
 
 
 client.login(config.token);
-
-setInterval(function() { alertsDelegate.checkForAlerts(client) }, 1000 * 15 );

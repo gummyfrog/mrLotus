@@ -1,25 +1,17 @@
 {
-  "name": "mrlotus",
+  "name": "mrlotus3",
   "version": "1.0.0",
-  "description": "Warframe Info bot.",
+  "description": "",
   "main": "lotus.js",
   "scripts": {
-    "start": "node lotus.js",
-    "frog": "node lotus.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gummyfrog/mrLotus.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gummyfrog/mrLotus/issues"
-  },
-  "homepage": "https://github.com/gummyfrog/mrLotus#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "jsonfile": "^5.0.0",
     "latest-tweets": "^1.0.3",
-    "scrape-it": "^5.0.5"
+    "moment": "^2.22.2"
   }
 }
