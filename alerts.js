@@ -133,8 +133,7 @@ exports.sites = function(type, message) {
 exports.watchAlerts = function(client) {
 	console.log('watching...');
 	latest('warframeAlerts', function (err, tweets) {
-		// var alert = tweets[0].content;
-		var alert = "Erpo (Earth): Enemy Escorts Located - 1m - 3500cr"
+		var alert = tweets[0].content;
 
 		if(alert != storedAlerts.last_recieved && !alert.includes('Invasion') && !alert.includes('Sortie') ) {
 			storedAlerts.last_recieved = alert;
@@ -293,13 +292,13 @@ function richInvoices(invoices) {
 
 
 function update() {
-	console.log('Updating')
-	console.log(dat);
+	console.log('Updating Sites')
+	// console.log(dat);
 	json.writeFileSync(datPath, dat);
 }
 
 function updateAlerts() {
-	console.log('Updating')
+	console.log('Updating Alerts')
 	// console.log(storedAlerts);
 	json.writeFileSync(alertsPath, storedAlerts)
 }
