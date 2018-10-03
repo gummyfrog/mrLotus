@@ -94,11 +94,7 @@ client.on('message', message => {
 	}
 
 
-	// break
-
-	if(command == 'ship') {
-		alerts.watchAlerts(client);
-	}
+	// breaks
 
 	if(command == 'active') {
 		alerts.activeAlerts();

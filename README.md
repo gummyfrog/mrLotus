@@ -8,7 +8,7 @@
 Mr. Lotus is a Discord bot that keeps an eye on Warframe Alerts.
 With Mr. Lotus in your server, you can get notified about certain alerts, check when active alerts expire, and access the Warframe Wiki.
 
-### Alert Management: 
+### Commands: 
 
 !active
 
@@ -29,6 +29,9 @@ With Mr. Lotus in your server, you can get notified about certain alerts, check 
 &nbsp;&nbsp;&nbsp;-Shows what alerts are being forwarded to you or this channel.
 
 
+!help
+&nbsp;&nbsp;&nbsp;-Shows you the command list.
+
 
   
 ### Wiki Scraping Commands:
@@ -39,9 +42,6 @@ With Mr. Lotus in your server, you can get notified about certain alerts, check 
 ## What happened to the old Mr. Lotus, and the older Mr. Lotus?
 
 Started getting back into Warframe recently, and discovered that this bot is really awful. Needs a third rewrite.
-
-## All Commands
-
 
 
 
