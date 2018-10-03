@@ -38,13 +38,7 @@ With Mr. Lotus in your server, you can get notified about certain alerts, check 
 #### This feature is not currently implemented.
 
 ![Info](https://i.imgur.com/8W9H6hh.png)
-  
-## What happened to the old Mr. Lotus, and the older Mr. Lotus?
-
-Started getting back into Warframe recently, and discovered that this bot is really awful. Needs a third rewrite.
-
-
-
+ 
 
 ## Libraries
 
