@@ -12,8 +12,7 @@ With Mr. Lotus in your server, you can get notified about certain alerts, check 
 
 !active
 
-&nbsp;&nbsp;-Returns all active alerts, and how much time is left before they expire.
-  
+&nbsp;&nbsp;-Returns all active alerts, and how much time is left before they expire.  
   
 !alert { me / channel } [ args ]
 
@@ -23,19 +22,12 @@ With Mr. Lotus in your server, you can get notified about certain alerts, check 
 
 &nbsp;&nbsp;&nbsp;-Stops forwarding alerts with [ args ].
 
-
-
 !alerts { me / channel}
 &nbsp;&nbsp;&nbsp;-Shows what alerts are being forwarded to you or this channel.
-
 
 !help
 &nbsp;&nbsp;&nbsp;-Shows you the command list.
 
-
-  
-### Wiki Scraping Commands:
-#### This feature is not currently implemented.
 
 ![Info](https://i.imgur.com/8W9H6hh.png)
  
