@@ -62,14 +62,14 @@ exports.newSite = function(type, message, filter) {
 	var matching = exists(type, message, filter);
 
 	if(matching != false) {
-		lotus.send('Already a request like that for this channel.');
+		lotus.send('That site already exists.');
 		return;
 	}
 
 	var invoice = invoiceInfo(type, message, filter);
 
 	dat.sites.push(invoice);
-	lotus.send('Okay!');
+	lotus.send(`Okay! Setup a new site for [ ${filter.join(', ').toUpperCase()} ]`);
 	update();
 }
 
@@ -80,9 +80,10 @@ exports.removeSite = function(type, message, filter) {
 	if(matching != false) {
 		// !!!! 			if there are multiple, ask to choose! 				!!!!
 		dat.sites.splice(dat.sites.indexOf(matching[0]), 1);
-		lotus.send('Okay.');
+		lotus.send(`Okay! Removed a site for [ ${filter.join(', ').toUpperCase()} ]`);
+		update()
 	} else {
-		lotus.send('No requests like that found.');
+		lotus.send(`No sites for [ ${filter.join(', ').toUpperCase()} ] like that found.`);
 	}
 }
 
@@ -301,6 +302,7 @@ function updateAlerts() {
 	console.log('Updating Alerts')
 	// console.log(storedAlerts);
 	json.writeFileSync(alertsPath, storedAlerts)
+
 }
 
 
